@@ -113,25 +113,110 @@
 
 //---> create you own tag and inset in dom
 
-//-created element
-const create = document.createElement('div')
-create.id = 'newid'
-create.className = 'newdiv'
-create.setAttribute('title','hello')
-//-creating text content
-const text = document.createTextNode('hello world');
-//-create heading h3
-const heading = document.createElement('h3')
-//-adding h3 and textcontent in div element
-create.appendChild(heading).appendChild(text)
-//-where to insert
-const container = document.querySelector('header .container')
-//-before the tag
-const h1 = document.querySelector('header h1')
-//-adding 
-container.insertBefore(create, h1)
-//-console view check
-//console.log(create)
-const mytag = document.querySelector('#newid');
-console.log(mytag)
-mytag.style.color = 'yellow'
+// //-created element
+// const create = document.createElement('div')
+// create.id = 'newid'
+// create.className = 'newdiv'
+// create.setAttribute('title','hello')
+// //-creating text content
+// const text = document.createTextNode('hello world');
+// //-create heading h3
+// const heading = document.createElement('h3')
+// //-adding h3 and textcontent in div element
+// create.appendChild(heading).appendChild(text)
+// //-where to insert
+// const container = document.querySelector('header .container')
+// //-before the tag
+// const h1 = document.querySelector('header h1')
+// //-adding 
+// container.insertBefore(create, h1)
+// //-console view check
+// console.log(create)
+// //-styled
+// const mytag = document.querySelector('#newid');
+// console.log(mytag)
+// mytag.style.color = 'yellow'
+
+//---> addeventlistener
+
+// const button = document.querySelector('.btn').addEventListener(
+//     'click', handleClick );
+
+// function handleClick(e){
+
+//     //console.log(e.target)
+//     //console.log(e.target.className)
+//     // console.log(e.target.id)
+//     //console.log(e.target.classList)
+
+//     //- in present word use
+//     // document.getElementById('output').innerHTML = `<h3>`+e.target.className+`</h3>`
+//     // console.log(e.type)
+
+//     //-mouse position document and element basis resp.
+//     // console.log(`x=${e.clientX} , y=${e.clientY}`)
+//     // console.log(`x=${e.offsetX} , y=${e.offsetY}`)
+
+//     //-with shortkeys true false basis
+//     // console.log(e.altKey)
+//     // console.log(e.shiftKey)
+//     // console.log(e.ctrlKey)
+
+//     //- basic
+//     // console.log('clicked')
+//     // const heading = document.querySelector('.container h3')
+//     // heading.textContent = 'hello world'
+// }
+
+//---> mouse overs
+
+// const button =document.getElementById('btn')
+// //button.addEventListener('click', handleClick)
+// //button.addEventListener('dblclick', handleClick)
+// // button.addEventListener('mousedown', handleClick)
+// // button.addEventListener('mouseup', handleClick)
+
+// //const box = document.getElementById('greybox')
+// // box.addEventListener('mouseenter',handleClick)
+// // box.addEventListener('mouseleave',handleClick)
+
+// // box.addEventListener('mouseenter',handleClick)
+// // box.addEventListener('mouseover',handleClick)
+
+// // box.addEventListener('mouseleave',handleClick)
+// // box.addEventListener('mouseout',handleClick)
+
+// //box.addEventListener('mousemove',handleClick)
+
+
+
+// function handleClick(e){
+//     // console.log(e.type)
+//     // list.innerHTML = `mouseX:${e.offsetX} mouseY:${e.offsetY}`
+//     // output.innerHTML = `mouseX:${e.offsetX} mouseY:${e.offsetY}`
+//     // output.style.color = `rgb(${e.offsetX}, ${e.offsetY},40)`
+
+// }
+//const item = document.querySelector('form input[type="text"]');
+
+//const sel = document.querySelector('select')
+// item.addEventListener('keydown', handleClick)
+//item.addEventListener('keypress', handleClick)
+//item.addEventListener('keyup', handleClick)
+
+// item.addEventListener('focus', handleClick)
+// item.addEventListener('blur', handleClick)
+
+// item.addEventListener('cut', handleClick)
+// item.addEventListener('paste', handleClick)
+
+const form = document.querySelector("form");
+      form.addEventListener('submit', handleClick)
+
+
+function handleClick(e){
+    e.preventDefault();
+    // console.log(e.target.value)
+    // document.getElementById('output').innerText = e.target.value
+   console.log(e.type)
+}

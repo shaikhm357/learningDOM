@@ -6,8 +6,9 @@ html{
     
 }
 body{
-    font-family:sans-serif;
+    font-family:cursive;
     width: 100%;
+    background-color: #f4f4f4;
 }
 .main-header{
     background-color: green;
@@ -17,13 +18,19 @@ body{
 .container{
   width: 80%;
   margin: auto;
+
 }
 
 .card{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     border: 1px solid rgb(213, 202, 202);
     border-radius: 4px;
     margin: 10px 0;
     padding: 10px;
+    box-sizing: border-box;
+    background-color: white;
 }
 form{
     margin-bottom: 15px;
@@ -35,6 +42,11 @@ form input[type=submit]{
     padding: 4px 6px;
     border-radius: 3px;
     
+}
+form input[type=submit]:hover{
+    background-color: #f4f4f4;
+    color: black;
+    cursor: pointer;
 }
 form input[type=text]{
     border: 1px solid rgb(213, 202, 202);
@@ -61,3 +73,21 @@ ul li{
 ul li#list{
     border-bottom: none;
 }
+button{
+    
+    margin :5px auto 0 auto;
+    width: 25vw;
+    padding: 2px;
+    border: none;
+    color: white;
+    background-color: rgb(27, 25, 25);
+    border-radius: 4px;
+}
+button:hover{
+    background-color:#f4f4f4;
+    color: black;
+    cursor: pointer;
+
+}
+
+

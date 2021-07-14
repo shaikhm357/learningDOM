@@ -210,13 +210,78 @@
 // item.addEventListener('cut', handleClick)
 // item.addEventListener('paste', handleClick)
 
-const form = document.querySelector("form");
-      form.addEventListener('submit', handleClick)
+// const form = document.querySelector("form");
+//       form.addEventListener('submit', handleClick)
 
 
-function handleClick(e){
-    e.preventDefault();
-    // console.log(e.target.value)
-    // document.getElementById('output').innerText = e.target.value
-   console.log(e.type)
+// function handleClick(e){
+//     e.preventDefault();
+//     // console.log(e.target.value)
+//     // document.getElementById('output').innerText = e.target.value
+//    console.log(e.type)
+// }
+
+const form = document.getElementById('addform')
+const addItem = document.getElementById('item')
+const filter = document.getElementById('filter')
+filter.addEventListener('keyup', fiterItem)
+
+
+
+// form submit
+form.addEventListener('submit', addtask);
+
+// remove item
+addItem.addEventListener('click', removeItem)
+
+
+function addtask(e) {
+      e.preventDefault()
+
+      //get input value
+      const inpt = document.getElementById('add').value
+
+      //created li 
+      const li = document.createElement('li')
+      // added class in li
+      li.className = 'list'
+      li.id = 'list'
+      //appended text of input in li_text by creating textNode
+      li.appendChild(document.createTextNode(inpt))
+
+      
+      const delBtn = document.createElement('button')
+      delBtn.className = 'delete'
+      delBtn.appendChild(document.createTextNode('x'))
+      //appended delete button in li
+      li.appendChild(delBtn)
+      //appended li_text  in our li
+      addItem.appendChild(li)
+
+      console.log(1)
+      console.log(li)
+      console.log(delBtn)
+
+}
+
+function removeItem(e) {
+
+      if (e.target.classList.contains('delete')) {
+            let li = e.target.parentElement;
+            addItem.removeChild(li)
+      }
+}
+
+function fiterItem(e) {
+      let text = e.target.value.toLowerCase()
+      console.log(text)
+      let lis = addItem.getElementsByTagName('li')
+      Array.from(lis).forEach(element => {
+            const li = element.firstChild.textContent;
+            if (li.toLowerCase().indexOf(text) != -1) {
+                  element.style.display = 'block'
+            } else {
+                  element.style.display = 'none'
+            }
+      });
 }
